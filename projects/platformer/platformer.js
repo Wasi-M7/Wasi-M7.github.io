@@ -76,6 +76,7 @@ createCannon("top",175,1500)
 createCannon("top",375,1500)
 createCannon("top",575,1500)
 createCannon("left",650,1250)
+createCannon("bottom",900,1250)
 
 
 
