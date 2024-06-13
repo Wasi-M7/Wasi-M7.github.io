@@ -27,14 +27,14 @@ var init = function (window) {
         function makeCircle(){
             // Code to draw a circle
             circle = draw.randomCircleInArea(canvas, true, true, "#999", 2);
-            physikz.addRandomVelocity(circle, canvas, 10, 10);
+            physikz.addRandomVelocity(circle, canvas, 5, 5);
             view.addChild(circle);
             circles.push(circle);  
         }
 
         // TODO 3 / 7 : Call the drawCircle() function 
-        for (var i = 0; i < 100; i++) {
-            drawCircle();
+        for (var i = 0; i < 1000; i++) {
+            makeCircle();
           }
 
         ////////////////////////////////////////////////////////////
@@ -48,7 +48,7 @@ var init = function (window) {
         */
         function update() {
             // TODO 4 : Update the circle's position //
-            for (var i = 0; i < circle.length; i++) {
+            for (var i = 0; i < circles.length; i++) {
                 physikz.updatePosition(circles[i])
               }
          
@@ -56,7 +56,7 @@ var init = function (window) {
 
             
             // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
-            for (var i = 0; i < circle.length; i++) {
+            for (var i = 0; i < circles.length; i++) {
                 game.checkCirclePosition(circles[i])
               }
          
@@ -71,21 +71,21 @@ var init = function (window) {
         Function. If that circle drifts off the screen, this Function should move
         it to the opposite side of the screen.
         */
-        game.checkCirclePosition = function(circle) {
-            var rightEdge = circle.x + circle.radius;
+        game.checkCirclePosition = function(circles) {
+            var rightEdge = circles.x + circles.radius;
             // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
             if ( rightEdge > canvas.width ) {
-                circle.x = circle.radius;
+                circles.x = circles.radius;
             }
             if ( rightEdge < 0) {
-                circle.x = canvas.width - circle.radius;
+                circles.x = canvas.width - circles.radius;
             }
-            var topEdge = circle.y + circle.radius
+            var topEdge = circles.y + circles.radius
             if ( topEdge < 0 ) {
-                circle.y = canvas.height - circle.radius;
+                circles.y = canvas.height - circles.radius;
             }
             if ( topEdge > canvas.height) {
-                circle.y = canvas.radius;
+                circles.y = canvas.radius;
             }
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
             
@@ -100,10 +100,9 @@ var init = function (window) {
         
         view.addChild(fps);
         app.addUpdateable(fps);
-        
         game.circle = circle;
         game.circles = circles;
-        game.drawCircle = drawCircle;
+        game.drawCircle = makeCircle;
         game.update = update;
         
         app.addUpdateable(window.opspark.game);
