@@ -44,6 +44,8 @@ $(document).ready(function () {
   // TODO 0: complete
 
   // TODO 2: add a new property to all data shapes
+  var currentShape = dataShapes[i];
+
   for (var i = 0; i < dataShapes.length; i++) {
     var currentShape = dataShapes[i];
     if (currentShape.color === "red") {
@@ -54,6 +56,7 @@ $(document).ready(function () {
       currentShape.goodBehavior = "spin";
     }
   }
+  
   // TODO 3-a: add a function that handles the static display type
   function handleStatic (data) {
     setBackgroundWithObject(data)
@@ -69,7 +72,7 @@ $(document).ready(function () {
 
   function staticDisplay() {
     // TODO 3-b: call your handleStatic function
-    handleStatic(currentShape[i])
+    handleStatic(currentShape)
   }
 
   function goodDisplay() {
