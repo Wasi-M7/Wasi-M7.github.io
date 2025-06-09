@@ -50,7 +50,9 @@ $(document).ready(function () {
       currentShape.goodBehavior = "bounce";
     }if (currentShape.color === "blue") {
       currentShape.goodBehavior = "blink";
-    } else currentShape.goodBehavior = "spin";
+    }if (currentShape.color === "green"){
+      currentShape.goodBehavior = "spin";
+    }
   }
   // TODO 3-a: add a function that handles the static display type
 
