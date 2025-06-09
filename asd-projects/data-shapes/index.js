@@ -47,10 +47,10 @@ $(document).ready(function () {
   for (var i = 0; i < dataShapes.length; i++) {
     var currentShape = dataShapes[i];
     if (currrentShape.color === "red") {
-      goodBehavior = "bounce";
+      currrentShape.goodBehavior = "bounce";
     }if (currentShape.color === "blue") {
-      goodBehavior = "blink";
-    } else goodBehavior = "spin";
+      currrentShape.goodBehavior = "blink";
+    } else currrentShape.goodBehavior = "spin";
   }
   // TODO 3-a: add a function that handles the static display type
 
