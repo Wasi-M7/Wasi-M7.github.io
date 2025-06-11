@@ -14,6 +14,8 @@ var highScoreElement = $("#highScore");
 var snake = [];
 var apple = [];
 var score = 0;
+var row = 0;
+var column = 0;
 // Constant Variables
 var ROWS = 20;
 var COLUMNS = 20;
@@ -167,7 +169,9 @@ function hasCollidedWithApple() {
   
   HINT: Both the apple and the snake's head are aware of their own row and column
   */
-
+  if (snake.head.row === apple.row && snake.head.column === apple.column){
+    return true
+  }
   return false;
 }
 
@@ -193,8 +197,18 @@ function handleAppleCollision() {
   var column = 0;
 
   // code to determine the row and column of the snakeSquare to add to the snake
-
-  makeSnakeSquare(row, column);
+  if (snake.tail.direction = "left"){
+    makeSnakeSquare(snake.tail.row + 1, snake.tail.column);
+  }
+  if (snake.tail.direction = "right"){
+    makeSnakeSquare(snake.tail.row - 1, snake.tail.column);
+  }
+  if (snake.tail.direction = "up"){
+    makeSnakeSquare(snake.tail.row, snake.tail.column - 1);
+  }
+  if (snake.tail.direction = "down"){
+    makeSnakeSquare(snake.tail.row, snake.tail.column + 1);
+  }
 }
 
 function hasCollidedWithSnake() {
