@@ -106,19 +106,19 @@ function checkForNewDirection(event) {
 }
 
 function moveSnake() {
-  for (i = 0; ) ) {
-    var snakeSquare = "???";
+//  for (i = 0; ) ) {
+//    var snakeSquare = "???";
+//
+//    var nextSnakeSquare = "???";
+//    var nextRow = "???";
+//    var nextColumn = "???";
+//    var nextDirection = "???";
 
-    var nextSnakeSquare = "???";
-    var nextRow = "???";
-    var nextColumn = "???";
-    var nextDirection = "???";
-
-    snakeSquare.direction = nextDirection;
-    snakeSquare.row = nextRow;
-    snakeSquare.column = nextColumn;
-    repositionSquare(snakeSquare);
-}
+//    snakeSquare.direction = nextDirection;
+//    snakeSquare.row = nextRow;
+//    snakeSquare.column = nextColumn;
+//    repositionSquare(snakeSquare);
+//}
   /* 
   TODO 11: Move each part of the snake's body such that it's body follows the head.
   
@@ -149,7 +149,7 @@ function moveSnake() {
   }
   if (snake.head.direction === "down") {
     snake.head.row = snake.head.row + 1;
-}
+  }
 repositionSquare(snake.head);
 }
 
