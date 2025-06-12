@@ -105,19 +105,19 @@ function checkForNewDirection(event) {
 }
 
 function moveSnake() {
-  //  for (i = 0; ) ) {
-  //    var snakeSquare = "???";
-  //
-  //    var nextSnakeSquare = "???";
-  //    var nextRow = "???";
-  //    var nextColumn = "???";
-  //    var nextDirection = "???";
+//  for (i = snake.body.array; i <= 1; i--) {
+//    var snakeSquare = i - 1;
 
-  //    snakeSquare.direction = nextDirection;
-  //    snakeSquare.row = nextRow;
-  //    snakeSquare.column = nextColumn;
-  //    repositionSquare(snakeSquare);
-  //}
+//    var nextSnakeSquare = i;
+//    var nextRow = snake.body.row;
+//    var nextColumn = snake.body.columm;
+//    var nextDirection = snake.head.direction;
+
+///    snakeSquare.direction = nextDirection;
+//    snakeSquare.row = nextRow;
+//    snakeSquare.column = nextColumn;
+//    repositionSquare(snakeSquare);
+//  }
   /* 
   TODO 11: Move each part of the snake's body such that it's body follows the head.
   
@@ -236,7 +236,6 @@ function handleAppleCollision() {
   makeSnakeSquare(row, column);
 }
 
-
 function hasCollidedWithSnake() {
   //TODO 12: Should return true if the snake's head has collided with any part of the
   //snake's body.
@@ -333,7 +332,6 @@ function makeSnakeSquare(row, column) {
   snake.body.push(snakeSquare);
   snake.tail = snakeSquare;
 }
-
 
 /* 
   event.which returns the keycode of the key that is pressed when the
