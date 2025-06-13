@@ -242,24 +242,19 @@ function hasCollidedWithSnake() {
   // initialize a new snakeSquare Object
 
   // make the snakeSquare.element Object and append it to the board
-  snakeSquare.element = $("<div>").addClass("snake").appendTo(board);
-
-  // initialize the row and column properties on the snakeSquare Object
-  snakeSquare.row = row;
-  snakeSquare.column = column;
-
-  // set the position of the snake on the screen
-  repositionSquare(snakeSquare);
 
 
   //HINT: Each part of the snake's body is stored in the snake.body Array. The
   //head and each part of the snake's body also knows its own row and column.
-  if (snake.body[0] === snake.body.row && snake.body.column   ){
+  for (i = snake.body.length -1; i >= 1; i--) {
+    var snakeSquare = snake.body[i];
+    if (snake.head === snake.body[i] ){
     return true
   }
-  return false;
+  else{
+    return false;}
 }
-
+}
 function endGame() {
   // stop update function from running
   clearInterval(updateInterval);
