@@ -105,12 +105,12 @@ function checkForNewDirection(event) {
 }
 
 function moveSnake() {
-  for (i = snake.body.length -1; i > 1; i--) {
+  for (i = snake.body.length -1; i >= 1; i--) {
     var snakeSquare = snake.body[i];
 
     var nextSnakeSquare = snake.body[i-1];
     var nextRow = nextSnakeSquare.row;
-    var nextColumn = nextSnakeSquare.columm;
+    var nextColumn = nextSnakeSquare.column;
     var nextDirection = nextSnakeSquare.direction;
 
     snakeSquare.direction = nextDirection;
@@ -240,6 +240,9 @@ function hasCollidedWithSnake() {
   //TODO 12: Should return true if the snake's head has collided with any part of the
   //snake's body.
   // initialize a new snakeSquare Object
+  
+  
+
   var snakeSquare = {};
 
   // make the snakeSquare.element Object and append it to the board
@@ -252,17 +255,12 @@ function hasCollidedWithSnake() {
   // set the position of the snake on the screen
   repositionSquare(snakeSquare);
 
-  // if this is the head, add the snake-head id
-  if (snake.body.length === 0) {
-    snakeSquare.element.attr("id", "snake-head");
-  }
 
-  // add snakeSquare to the end of the body Array and set it as the new tail
-  snake.body.push(snakeSquare);
-  snake.tail = snakeSquare;
   //HINT: Each part of the snake's body is stored in the snake.body Array. The
   //head and each part of the snake's body also knows its own row and column.
-
+  if (snake.body[0] ===   ){
+    return true
+  }
   return false;
 }
 
