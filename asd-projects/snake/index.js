@@ -240,10 +240,6 @@ function hasCollidedWithSnake() {
   //TODO 12: Should return true if the snake's head has collided with any part of the
   //snake's body.
   // initialize a new snakeSquare Object
-  
-  
-
-  var snakeSquare = {};
 
   // make the snakeSquare.element Object and append it to the board
   snakeSquare.element = $("<div>").addClass("snake").appendTo(board);
@@ -258,7 +254,7 @@ function hasCollidedWithSnake() {
 
   //HINT: Each part of the snake's body is stored in the snake.body Array. The
   //head and each part of the snake's body also knows its own row and column.
-  if (snake.body[0] ===   ){
+  if (snake.body[0] === snake.body.row && snake.body.column   ){
     return true
   }
   return false;
