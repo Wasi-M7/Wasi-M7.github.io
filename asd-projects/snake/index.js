@@ -141,19 +141,16 @@ function moveSnake() {
   if (snake.head.direction === "left") {
     snake.head.column = snake.head.column - 1; // when it moves left, one is subtracted
   }
-  repositionSquare(snake.head);
 
-  if (snake.head.direction === "right") {
+  else if (snake.head.direction === "right") {
     snake.head.column = snake.head.column + 1; // when it moves right, one is added
   }
-  repositionSquare(snake.head);
 
-  if (snake.head.direction === "up") {
+  else if (snake.head.direction === "up") {
     snake.head.row = snake.head.row - 1; // when it moves up, one is subtracted
   }
-  repositionSquare(snake.head);
 
-  if (snake.head.direction === "down") {
+  else if (snake.head.direction === "down") {
     snake.head.row = snake.head.row + 1; // when it moves down, one is added
   }
   repositionSquare(snake.head);
@@ -179,7 +176,7 @@ function hasHitWall() {
   if (snake.head.column < 0) {
     return true;
   }
-
+  return false;
   //return false;
 }
 
@@ -243,18 +240,17 @@ function hasCollidedWithSnake() {
 
   // make the snakeSquare.element Object and append it to the board
 
-
   //HINT: Each part of the snake's body is stored in the snake.body Array. The
   //head and each part of the snake's body also knows its own row and column.
-  for (i = snake.body.length -1; i >= 1; i--) {
-    var snakeSquare = snake.body[i];
-    if (snake.head === snake.body[i] ){
-    return true
+  for (let i = 1; i < snake.body.length; i++) {
+    let snakebody = snake.body[i];
+    if ( snake.head.row === snakebody.row && snake.head.column === snakebody.column) {
+      return true
+    }
   }
-  else{
-    return false;}
+  return false;
 }
-}
+
 function endGame() {
   // stop update function from running
   clearInterval(updateInterval);
@@ -364,6 +360,10 @@ function getRandomAvailablePosition() {
   while (!spaceIsAvailable) {
     randomPosition.column = Math.floor(Math.random() * COLUMNS);
     randomPosition.row = Math.floor(Math.random() * ROWS);
+      //if (part.row === randomPosition.row && part.column === randomPosition.column) {
+      //  spaceIsAvailable = false;
+      //  break;
+      //}
     spaceIsAvailable = true;
 
     /*
