@@ -360,10 +360,10 @@ function getRandomAvailablePosition() {
   while (!spaceIsAvailable) {
     randomPosition.column = Math.floor(Math.random() * COLUMNS);
     randomPosition.row = Math.floor(Math.random() * ROWS);
-      //if (part.row === randomPosition.row && part.column === randomPosition.column) {
-      //  spaceIsAvailable = false;
+      if (snake.body.row === randomPosition.row && snake.body.column.column === randomPosition.column) {
+      spaceIsAvailable = false;
       //  break;
-      //}
+      }
     spaceIsAvailable = true;
 
     /*
