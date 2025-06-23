@@ -101,13 +101,13 @@ function runProgram(){
   function wallCollision(){
     width = $("#board").width()
     height = $("#board").height()
-    if (walker.positionX >= width){
+    if (walker.positionX = width - 50){
       walker.speedX -= 5
     }
     if (walker.positionX <= 0){
       walker.speedX += 5
     }
-    if (walker.positionY >= height){
+    if (walker.positionY = height - 50){
       walker.speedY += 5
     }
     if (walker.positionY <= 0){
