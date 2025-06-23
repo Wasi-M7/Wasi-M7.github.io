@@ -18,11 +18,11 @@ function runProgram(){
     UP : 38,
     DOWN :40  
   }
-  function walker(){
-  var positionX = 0
-  var positionY = 0
-  var speedX = 0
-  var speedY = 0
+  var walker = {
+   positionX : 0,
+   positionY : 0,
+   speedX : 0,
+   speedY : 0
   }
   // one-time setup
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
@@ -37,7 +37,8 @@ function runProgram(){
   by calling this function and executing the code inside.
   */
   function newFrame() {
-    
+    repositionGameItem()
+    redrawGameItem()
 
   }
   
@@ -59,7 +60,7 @@ function runProgram(){
     }
     if (event.which === KEY.DOWN) {
     console.log("down pressed");
-    walker.speedY = +5;
+    walker.speedY = -5;
   }
   }
   
