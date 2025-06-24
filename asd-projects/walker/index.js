@@ -103,7 +103,7 @@ function runProgram(){
     height = $("#board").height()
     if (walker.positionX > width) OR (walker.positionX < 0);{
       walker.positionX += 5
-      walker.positionX =
+      walker.positionX -= 5
     }
   
     if (walker.positionY > height) OR (walker.positionY < 0);{
