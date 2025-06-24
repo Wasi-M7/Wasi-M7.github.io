@@ -102,13 +102,14 @@ function runProgram(){
     width = $("#board").width()
     height = $("#board").height()
     if (walker.positionX > width || walker.positionX < 0){
-      walker.positionX += 5
+      walker.positionX -= walker.speedX
+
     }
     
   
     if (walker.positionY > height || walker.positionY < 0){
-      walker.positionY += 5
-    //  walker.positionY -= 5 
+      walker.positionY -= walker.speedY
+
     }
   }
 
