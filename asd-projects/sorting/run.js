@@ -6,9 +6,11 @@ $(document).ready(function(){
     $("#goButton").on("click", function(){
         if (!STARTED){
             STARTED = true;
+            console.log("started")
 
             if (bubbleSort){
                 bubbleSort(bubbleList);
+                console.log("bubble sorting")
             }
             if (quickSort){
                 quickSort(quickList, 0, quickList.length-1);
